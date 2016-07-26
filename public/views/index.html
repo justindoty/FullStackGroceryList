@@ -5,9 +5,31 @@
     <title>GroceryList</title>
     <script src="/vendor/angular/angular.min.js"></script>
     <script src="/scripts/client.min.js"></script>
-    <script src="/views/stylesheet.css"></script>
+    <link rel="stylesheet" type="text/css" href="/views/stylesheet.css" />
   </head>
-  <body ng-controller="ItemController as item">
-    <h1>((item.message))</h1>
+
+  <body ng-controller="ItemController as item" >
+    <header>
+      <h1>Grocery List</h1>
+    </header>
+    <div class="input">
+      <form>
+        <h3>Add Item</h3><input type="text" ng-model="item.item_name" placeholder="Item Name"  />
+        <h3>Item Qty</h3><input type="number" ng-model="item.item_qty" placeholder="Item Qty" />
+        <input type="submit" value="submit" ng-click="item.addItem()" />
+      </form>
+    </div>
+    <div class="list">
+      <h2>Grocery Items</h2>
+        <ul>
+          <li ng-repeat="items in item.items">
+            <h2 class="items">{{items.item_name}}</h2>
+            <h2 class="items">{{items.item_qty}}</h2>
+
+            <button class="items" ng-click="item.deleteItem(items._id)">DELETE</button
+
+          </li>
+        </ul>
+    </div>
   </body>
 </html>
