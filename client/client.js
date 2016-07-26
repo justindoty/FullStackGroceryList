@@ -1,3 +1,7 @@
+//didnt get the edit function hooked up. Ran out of time.
+
+
+
 angular.module('groceryApp', []);
 
 angular.module('groceryApp').controller("ItemController", ['$http', function($http){
